@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-0": {
-            "BIT\\GoogleBundle": ""
+            "BIT\\GoogleBundle": "jrg-matt/google-bundle"
         }
     },
     "target-dir": "BIT/GoogleBundle"
