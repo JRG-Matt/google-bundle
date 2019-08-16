@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="bit_google.client" class="%bit_google.client.class%">
+            <argument type="collection">
+                <argument key="app_name">%bit_google.app_name%</argument>
+                <argument key="client_id">%bit_google.client_id%</argument>
+                <argument key="client_secret">%bit_google.client_secret%</argument>
+                <argument key="simple_api_access">%bit_google.simple_api_access%</argument>
+                <argument key="state">%bit_google.state%</argument>
+                <argument key="access_type">%bit_google.access_type%</argument>
+                <argument key="scopes">%bit_google.scopes%</argument>
+                <argument key="approval_prompt">%bit_google.approval_prompt%</argument>
+                <argument key="callback_route">%bit_google.callback_route%</argument>
+            </argument>
+            <argument type="service" id="session"/>
+            <argument type="service" id="router"/>
+        </service>
+        <service id="bit_google.user" class="%bit_google.user.class%">
+            <argument type="service" id="bit_google.client"/>
+        </service>
+        <service id="bit_google.contacts" class="%bit_google.contact.class%">
+            <argument type="service" id="bit_google.client"/>
+        </service>
+        <service id="bit_google.url_shortener" class="%bit_google.url.class%">
+            <argument type="service" id="bit_google.client"/>
+        </service>
+        <service id="bit_google.twig" class="%bit_google.twig.class%">
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="bit_google.client"/>
+            <argument type="service" id="bit_google.url_shortener"/>
+            <tag name="twig.extension"/>
+        </service>
+
+    </services>
+</container>
