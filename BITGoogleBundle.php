@@ -10,7 +10,7 @@
  */
 namespace BIT\GoogleBundle;
 
-use jrg-matt\google-bundle\BIT\GoogleBundle\DependencyInjection\Security\Factory\GoogleFactory;
+use BIT\GoogleBundle\DependencyInjection\Security\Factory\GoogleFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
