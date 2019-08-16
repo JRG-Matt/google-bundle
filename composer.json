@@ -1,5 +1,5 @@
 {
-    "name": "google-bundle/google-bundle",
+    "name": "jrg-matt/google-bundle",
     "type": "symfony-bundle",
     "description": "Integrate Google Services into Symfony 2 app.",
     "keywords": ["google", "user", "contacts", "url shorter"],
